@@ -19,4 +19,14 @@ class LinkedList {
       this.tail = value;
     }
   }
+  toArray() {
+    let elements = [];
+
+    let current = this.head;
+    while (current) {
+      elements.push(current.value);
+      current = current.next;
+    }
+    return elements;
+  }
 }
