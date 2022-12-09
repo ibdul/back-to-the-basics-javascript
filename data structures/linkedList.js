@@ -9,4 +9,14 @@ class LinkedList {
     this.head = undefined;
     this.tail = undefined;
   }
+  append(value) {
+    value = new Node(value);
+    if (!this.head) {
+      this.head = value;
+      this.tail = value;
+    } else {
+      this.tail.next = value;
+      this.tail = value;
+    }
+  }
 }
