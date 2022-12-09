@@ -19,6 +19,17 @@ class LinkedList {
       this.tail = value;
     }
   }
+  prepend(value) {
+    value = new Node(value);
+
+    if (!this.head) {
+      this.head = value;
+      this.tail = value;
+    } else {
+      value.next = this.head;
+      this.head = value;
+    }
+  }
   toArray() {
     let elements = [];
 
@@ -30,3 +41,11 @@ class LinkedList {
     return elements;
   }
 }
+
+let myLinkedList = new LinkedList();
+myLinkedList.append("hello there");
+myLinkedList.append(1);
+myLinkedList.append(234.32);
+myLinkedList.prepend("first");
+
+console.log(myLinkedList.toArray());
