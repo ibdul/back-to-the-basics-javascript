@@ -23,6 +23,7 @@ class Queue {
     // O(1)
 
     value = new Node(value);
+
     if (this.isEmpty()) {
       this.head = value;
     } else {
@@ -32,7 +33,17 @@ class Queue {
     this.count++;
     this.tail = value;
   }
+
   // dequeue
+  dequeue() {
+    // O(1);
+
+    if (!this.isEmpty()) {
+      this.head = this.head.next;
+    }
+    this.count--;
+    return this.head;
+  }
   // find
   // toArray
 
@@ -54,4 +65,6 @@ myQueue.enqueue(1);
 myQueue.enqueue(2);
 myQueue.enqueue(3);
 myQueue.enqueue(4);
+console.log(myQueue.dequeue());
+console.log(myQueue.dequeue());
 console.log(myQueue.toArray());
