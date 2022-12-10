@@ -15,6 +15,17 @@ class DoublyLinkedList {
     return !(this.head && this.tail);
   }
   //   append
+  append(value) {
+    value = new Node(value);
+
+    if (this.isEmpty()) {
+      this.head = value;
+    } else {
+      value.prev = this.tail;
+      this.tail.next = value;
+    }
+    this.tail = value;
+  }
   //   prepend
   //   delete
   //   find
@@ -34,5 +45,7 @@ class DoublyLinkedList {
 }
 
 const myList = new DoublyLinkedList();
-
+myList.append(2);
+myList.append(4);
+myList.append(12);
 console.log(myList.toArray());
