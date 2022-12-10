@@ -18,6 +18,16 @@ class Queue {
     this.head = value;
   }
   // pop
+  pop() {
+    // O(1)
+
+    let value = this.head;
+    if (value) {
+      this.head = value.previous;
+    }
+    return value;
+  }
+
   //peek
   //toArray
   toArray() {
@@ -37,5 +47,6 @@ const myQueue = new Queue();
 
 myQueue.push("ads");
 myQueue.push(23);
+myQueue.pop();
 
 console.log(myQueue.toArray());
