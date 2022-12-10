@@ -10,6 +10,8 @@ class LinkedList {
     this.tail = undefined;
   }
   append(value) {
+    // O(1)
+
     value = new Node(value);
     if (!this.head) {
       this.head = value;
@@ -20,6 +22,8 @@ class LinkedList {
     }
   }
   prepend(value) {
+    // O(1)
+
     value = new Node(value);
 
     if (!this.head) {
@@ -32,6 +36,8 @@ class LinkedList {
   }
 
   find(value) {
+    // O(n)
+
     let current = this.head;
     while (current) {
       if (current.value == value) {
@@ -43,6 +49,8 @@ class LinkedList {
   }
 
   findAll(value) {
+    // O(n)
+
     let current = this.head;
     let results = [];
 
@@ -56,6 +64,8 @@ class LinkedList {
   }
 
   delete(value) {
+    // O(n)
+
     let current = this.head;
     let previous = this.head;
 
@@ -76,6 +86,8 @@ class LinkedList {
   }
 
   toArray() {
+    // O(n)
+
     let elements = [];
 
     let current = this.head;

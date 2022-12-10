@@ -12,10 +12,14 @@ class DoublyLinkedList {
     this.tail = undefined;
   }
   isEmpty() {
+    // O(1)
+
     return !(this.head && this.tail);
   }
   //   append
   append(value) {
+    // O(1)
+
     value = new Node(value);
 
     if (this.isEmpty()) {
@@ -29,6 +33,8 @@ class DoublyLinkedList {
 
   //   prepend
   prepend(value) {
+    // O(1)
+
     value = new Node(value);
 
     if (this.isEmpty()) {
@@ -43,6 +49,8 @@ class DoublyLinkedList {
 
   //   delete
   delete(value) {
+    // O(n)
+
     let current = this.head;
 
     while (current) {
@@ -62,6 +70,8 @@ class DoublyLinkedList {
   }
   //   find
   find(value) {
+    // O(n)
+
     let current = this.head;
     while (current) {
       if (current.value == value) {
@@ -73,6 +83,8 @@ class DoublyLinkedList {
   }
   //   findAll
   findAll(value) {
+    // O(n)
+
     let current = this.head;
     let matches = [];
     while (current) {
@@ -85,6 +97,8 @@ class DoublyLinkedList {
   }
   //   toArray
   toArray() {
+    // O(n)
+
     let values = [];
     if (!this.isEmpty()) {
       let current = this.head;
