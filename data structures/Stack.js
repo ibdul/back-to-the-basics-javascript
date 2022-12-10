@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class Queue {
+class Stack {
   constructor() {
     this.head = undefined;
   }
