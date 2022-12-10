@@ -42,6 +42,24 @@ class DoublyLinkedList {
   }
 
   //   delete
+  delete(value) {
+    let current = this.head;
+
+    while (current) {
+      if (current.value == value) {
+        if (current == this.head) {
+          current.next.previous = undefined;
+          this.head = current.next;
+        } else if (current == this.tail) {
+          this.tail = current.previous;
+          this.tail.next = undefined;
+        } else {
+          current.previous.next = current.next;
+        }
+      }
+      current = current.next;
+    }
+  }
   //   find
   //   findAll
   //   toArray
@@ -67,4 +85,7 @@ myList.prepend(54);
 myList.prepend(54);
 myList.append(12);
 myList.append(54);
+console.log(myList.toArray());
+myList.delete(54);
+
 console.log(myList.toArray());
