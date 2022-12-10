@@ -72,6 +72,17 @@ class DoublyLinkedList {
     return undefined;
   }
   //   findAll
+  findAll(value) {
+    let current = this.head;
+    let matches = [];
+    while (current) {
+      if (current.value == value) {
+        matches.push(current);
+      }
+      current = current.next;
+    }
+    return matches;
+  }
   //   toArray
   toArray() {
     let values = [];
@@ -95,7 +106,8 @@ myList.prepend(54);
 myList.prepend(54);
 myList.append(12);
 myList.append(54);
+console.log(myList.findAll(54));
 myList.delete(54);
-console.log(myList.find(54));
+console.log(myList.findAll(54));
 
 console.log(myList.toArray());
