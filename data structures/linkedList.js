@@ -30,6 +30,31 @@ class LinkedList {
       this.head = value;
     }
   }
+
+  find(value) {
+    let current = this.head;
+    while (current) {
+      if (current.value == value) {
+        return current;
+      }
+      current = current.next;
+    }
+    return -1;
+  }
+
+  findAll(value) {
+    let current = this.head;
+    let results = [];
+
+    while (current) {
+      if (current.value == value) {
+        results.push(current);
+      }
+      current = current.next;
+    }
+    return results;
+  }
+
   toArray() {
     let elements = [];
 
@@ -45,7 +70,11 @@ class LinkedList {
 let myLinkedList = new LinkedList();
 myLinkedList.append("hello there");
 myLinkedList.append(1);
+myLinkedList.append(1);
+myLinkedList.append(1);
 myLinkedList.append(234.32);
+myLinkedList.append(1);
 myLinkedList.prepend("first");
 
+console.log(myLinkedList.findAll(1));
 console.log(myLinkedList.toArray());
