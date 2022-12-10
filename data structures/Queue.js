@@ -10,11 +10,18 @@ class Queue {
     this.head = undefined;
   }
   // push
+  push(value) {
+    // O(1)
+
+    value = new Node(value);
+    value.previous = this.head;
+    this.head = value;
+  }
   // pop
   //peek
   //toArray
   toArray() {
-    // O(n);
+    // O(n)
 
     let values = [];
     let current = this.head;
@@ -27,5 +34,8 @@ class Queue {
 }
 
 const myQueue = new Queue();
+
+myQueue.push("ads");
+myQueue.push(23);
 
 console.log(myQueue.toArray());
