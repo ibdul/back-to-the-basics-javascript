@@ -21,7 +21,7 @@ class DoublyLinkedList {
     if (this.isEmpty()) {
       this.head = value;
     } else {
-      value.prev = this.tail;
+      value.previous = this.tail;
       this.tail.next = value;
     }
     this.tail = value;
@@ -36,7 +36,7 @@ class DoublyLinkedList {
       this.tail = value;
     } else {
       value.next = this.head;
-      this.head.prev = value;
+      this.head.previous = value;
       this.head = value;
     }
   }
@@ -61,7 +61,10 @@ class DoublyLinkedList {
 const myList = new DoublyLinkedList();
 myList.append(2);
 myList.append(4);
+myList.prepend(34);
+myList.prepend(54);
+myList.prepend(54);
 myList.prepend(54);
 myList.append(12);
-myList.prepend(34);
+myList.append(54);
 console.log(myList.toArray());
