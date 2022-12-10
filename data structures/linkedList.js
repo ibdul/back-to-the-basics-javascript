@@ -55,6 +55,26 @@ class LinkedList {
     return results;
   }
 
+  delete(value) {
+    let current = this.head;
+    let previous = this.head;
+
+    while (current) {
+      if (current.value == value) {
+        if (current == this.head) {
+          this.head = this.head.next;
+        } else if (current.next == this.tail) {
+          this.tail = previous;
+        } else {
+          previous.next = current.next;
+        }
+      } else {
+        previous = current;
+      }
+      current = current.next;
+    }
+  }
+
   toArray() {
     let elements = [];
 
@@ -75,6 +95,7 @@ myLinkedList.append(1);
 myLinkedList.append(234.32);
 myLinkedList.append(1);
 myLinkedList.prepend("first");
+myLinkedList.prepend(1);
+myLinkedList.delete(2);
 
-console.log(myLinkedList.findAll(1));
 console.log(myLinkedList.toArray());
