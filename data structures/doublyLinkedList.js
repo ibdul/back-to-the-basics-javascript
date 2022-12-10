@@ -20,7 +20,19 @@ class DoublyLinkedList {
   //   find
   //   findAll
   //   toArray
+  toArray() {
+    let values = [];
+    if (!this.isEmpty()) {
+      let current = this.head;
+      while (current) {
+        values.push(current.value);
+        current = current.next;
+      }
+    }
+    return values;
+  }
 }
 
 const myList = new DoublyLinkedList();
-console.log(myList.isEmpty());
+
+console.log(myList.toArray());
