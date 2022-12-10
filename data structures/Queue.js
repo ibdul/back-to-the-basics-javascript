@@ -29,6 +29,12 @@ class Queue {
   }
 
   //peek
+  peek() {
+    // O(1)
+
+    return this.head;
+  }
+
   //toArray
   toArray() {
     // O(n)
@@ -50,3 +56,4 @@ myQueue.push(23);
 myQueue.pop();
 
 console.log(myQueue.toArray());
+console.log(myQueue.peek());
