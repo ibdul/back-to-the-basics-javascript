@@ -11,4 +11,16 @@ class DoublyLinkedList {
     this.head = undefined;
     this.tail = undefined;
   }
+  isEmpty() {
+    return !(this.head && this.tail);
+  }
+  //   append
+  //   prepend
+  //   delete
+  //   find
+  //   findAll
+  //   toArray
 }
+
+const myList = new DoublyLinkedList();
+console.log(myList.isEmpty());
