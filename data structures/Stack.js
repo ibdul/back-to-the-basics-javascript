@@ -12,6 +12,9 @@ class Stack {
   // push
   push(value) {
     // O(1)
+    // make the new value a node
+    // set the node's previous pointer to the current head
+    // set the node as the new head
 
     value = new Node(value);
     value.previous = this.head;
@@ -20,6 +23,8 @@ class Stack {
   // pop
   pop() {
     // O(1)
+    // return the stack's head
+    // if the stack is not empty, remove the current head and set it's previous element as the new head
 
     let value = this.head;
     if (value) {
@@ -31,6 +36,7 @@ class Stack {
   //peek
   peek() {
     // O(1)
+    // return the stack's head
 
     return this.head;
   }
@@ -38,6 +44,9 @@ class Stack {
   //toArray
   toArray() {
     // O(n)
+    // go through all the items in the stack
+    // put each item into a list
+    // return the list
 
     let values = [];
     let current = this.head;
@@ -49,14 +58,14 @@ class Stack {
   }
 }
 
-const myQueue = new Stack();
+const myStack = new Stack();
 
-myQueue.push("ads");
-myQueue.push(23);
-myQueue.pop();
+myStack.push("ads");
+myStack.push(23);
+myStack.pop();
 
-console.log(myQueue.toArray());
-console.log(myQueue.peek());
+console.log(myStack.toArray());
+console.log(myStack.peek());
 
 modules.exports = {
   Stack,
