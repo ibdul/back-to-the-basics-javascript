@@ -13,12 +13,16 @@ class DoublyLinkedList {
   }
   isEmpty() {
     // O(1)
+    // if there is no head and no tail in the list, it is empty.
 
     return !(this.head && this.tail);
   }
   //   append
   append(value) {
     // O(1)
+    // first make the value a node
+    // if the list is empty, make it the first element (make it the head and tail)
+    // else add it to the end and move the list's tail pointer to it and the tail's next poiner should point to it
 
     value = new Node(value);
 
@@ -34,6 +38,9 @@ class DoublyLinkedList {
   //   prepend
   prepend(value) {
     // O(1)
+    // first make the value a node
+    // if the list is empty, make it the first element (make it the head and tail)
+    // else add it to the front and move the list's head pointer to it and make it point to the old head as its next element
 
     value = new Node(value);
 
@@ -50,6 +57,12 @@ class DoublyLinkedList {
   //   delete
   delete(value) {
     // O(n)
+    // start checking from the head
+    // check iteratively
+    // if the head is the value, move the list's pointer to the next item
+    // if it is the tail, move the list's tail pointer to the element before the tail
+    // else, move the next pointer of the element before the current to the element after the current.
+    // adjust the previous pointers accordingly as well
 
     let current = this.head;
 
@@ -71,6 +84,9 @@ class DoublyLinkedList {
   //   find
   find(value) {
     // O(n)
+    // continously check the items in the list till the tail
+    // if a match is found, return the node
+    // return undefined otherwise
 
     let current = this.head;
     while (current) {
@@ -81,9 +97,14 @@ class DoublyLinkedList {
     }
     return undefined;
   }
+
   //   findAll
   findAll(value) {
     // O(n)
+    // continously check the items in the list till the tail
+    // populate a list with matching nodes
+    // return the list after reaching the end
+    // return an empty list otherwise
 
     let current = this.head;
     let matches = [];
@@ -95,9 +116,13 @@ class DoublyLinkedList {
     }
     return matches;
   }
+
   //   toArray
   toArray() {
     // O(n)
+    // transverse the list to the end
+    // while moving, copy the value of each node to a list
+    // return the list at the end
 
     let values = [];
     if (!this.isEmpty()) {
