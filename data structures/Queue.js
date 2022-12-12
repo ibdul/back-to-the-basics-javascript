@@ -15,12 +15,17 @@ class Queue {
   // isEmpty
   isEmpty() {
     // O(1)
+    // if queue count is 0, the queue is empty
 
     return !this.count;
   }
   //enqueue
   enqueue(value) {
     // O(1)
+    // make a new node with the desired value
+    // if the queue is empty, just set the new node as the head and tail
+    // if there are already items, add it behind the tail and set the pointers accordingly
+    // increment the count value
 
     value = new Node(value);
 
@@ -37,6 +42,9 @@ class Queue {
   // dequeue
   dequeue() {
     // O(1);
+    // if the list is not empty,
+    // return the head and set the head pointer to the head's next value
+    // decrement count
 
     const output = this.head;
     if (!this.isEmpty()) {
@@ -50,6 +58,9 @@ class Queue {
 
   toArray() {
     // O(n)
+    // check all the values in the queue,
+    // whilst doing so, make a copy of all the values in a list
+    // return the list
 
     let values = [];
     let current = this.head;
