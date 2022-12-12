@@ -49,7 +49,7 @@ class Stack {
   }
 }
 
-const myQueue = new Queue();
+const myQueue = new Stack();
 
 myQueue.push("ads");
 myQueue.push(23);
@@ -57,3 +57,7 @@ myQueue.pop();
 
 console.log(myQueue.toArray());
 console.log(myQueue.peek());
+
+modules.exports = {
+  Stack,
+};

@@ -38,11 +38,12 @@ class Queue {
   dequeue() {
     // O(1);
 
+    const output = this.head;
     if (!this.isEmpty()) {
       this.head = this.head.next;
+      this.count--;
     }
-    this.count--;
-    return this.head;
+    return output;
   }
   // find
   // toArray
@@ -61,10 +62,7 @@ class Queue {
 }
 
 const myQueue = new Queue();
-myQueue.enqueue(1);
-myQueue.enqueue(2);
-myQueue.enqueue(3);
-myQueue.enqueue(4);
-console.log(myQueue.dequeue());
-console.log(myQueue.dequeue());
-console.log(myQueue.toArray());
+
+module.exports = {
+  Queue,
+};
